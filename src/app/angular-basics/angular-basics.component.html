@@ -1,0 +1,117 @@
+<div class="container">
+<h2  [ngClass]="'A B C D'"  >{{title}}</h2>
+<div align="right" [ngStyle]="{'color':'blue'}" > Time :{{time|async}}</div>
+
+Show/Hide Color List :<input type="checkbox"  [(ngModel)]="show">
+
+
+<div class="jumbotron"  *ngIf="show; else invalid">
+<h3>My Favoryate Colors </h3>  
+<ul>
+<li  *ngFor="let c of colors"   [ngStyle]="{'color':c}" > {{c}} </li>
+</ul>
+</div>
+
+
+<div class="jumbotron"  [ngClass]="['A','B','C','D']">
+    Employee :{{employee}}
+    <hr/>
+    Employee :{{employee|json}}
+    <pre>
+        Employee   Id             :{{employee.id}}
+        Employee   Name           :{{employee.name}}
+        Employee   Name           :{{employee.name|titlecase}}
+        Employee   Name           :{{employee.name|lowercase}}
+        Employee   Name           :{{employee.name|uppercase}}
+
+
+
+        Employee   Salary         :{{employee.salary}}
+        Employee   Salary         :{{employee.salary|number}}
+        Employee   Salary         :{{employee.salary|number:'8.4-4'}}
+        
+        Employee   Salary         :{{employee.salary|currency}}
+        Employee   Salary         :{{employee.salary|currency:'INR'}}
+            
+        Employee   Varaible       :{{employee.variable}}
+        Employee   Varaible       :{{employee.variable|percent}}
+        
+        Employee   City           :{{employee.city}}
+
+        Employee   Mobile         :{{employee.mobile}}
+        Employee   Mobile         :XXXXXXXX{{employee.mobile|slice:8:10}}
+        
+        Employee   Pan            :{{employee.pan}}
+        Employee   Pan            :{{employee.pan|uppercase|slice:0:2}}XXXXXX{{employee.pan|uppercase|slice:8:10}}
+        
+        Employee  Gender          :{{employee.gender}}
+       
+        Employee   DOJ            :{{employee.doj}}
+        Employee   DOJ            :{{employee.doj|date}}
+        Employee   DOJ            :{{employee.doj|date:'shortDate'}}
+        Employee   DOJ            :{{employee.doj|date:'mediumDate'}}
+        Employee   DOJ            :{{employee.doj|date:'longDate'}}
+        Employee   DOJ            :{{employee.doj|date:'fullDate'}}
+        Employee   DOJ            :{{employee.doj|date:'dd-MMM-yyyy'}}
+        
+
+        Employee   DOJ            :{{employee.doj|date:'shortTime'}}
+        Employee   DOJ            :{{employee.doj|date:'mediumTime'}}
+        Employee   DOJ            :{{employee.doj|date:'longTime'}}
+        Employee   DOJ            :{{employee.doj|date:'fullTime'}}
+        Employee   DOJ            :{{employee.doj|date:'hh:mm:ss'}}
+        
+        
+        Employee   DOJ            :{{employee.doj|date:'short'}}
+        Employee   DOJ            :{{employee.doj|date:'medium'}}
+        Employee   DOJ            :{{employee.doj|date:'long'}}
+        Employee   DOJ            :{{employee.doj|date:'full'}}
+        
+        
+        Employee   DOJ            :{{employee.doj|date:'dd-MMM-yyyy hh:mm:ss'}}
+        
+      
+         
+      
+      </pre>  
+<pre    [ngClass]="{'A':show,'B':show,'C':hide,'D':hide}">
+<ol>
+ <li  *ngFor="let entry of employee|keyvalue"> {{entry.key}}   = {{entry.value}} </li>
+
+</ol>
+
+</pre>
+
+
+</div>
+
+
+
+
+
+<input type="button"   (click)="showHide()"    value="Show / Hide Day Div Tag" class="btn btn-primary"> 
+
+
+<div class="jumbotron"  *ngIf="hide; else invalid">
+
+  Select day : <input type="number"  min="{{min}}"   [max]="max"   [(ngModel)]="day">   {{day}}
+
+
+  <div  [ngSwitch]="day">
+
+      <div *ngSwitchCase="1">MONDAY</div>
+      <div *ngSwitchCase="2">TUESDAY</div>
+      <div *ngSwitchCase="3">WEDENESDAY</div>
+      <div *ngSwitchCase="4">THURSDAY</div>
+      <div *ngSwitchCase="5">FRIDAY</div>
+      <div *ngSwitchCase="6">SATURDAY</div>
+      <div *ngSwitchCase="7">SUNDAY</div>
+      <div *ngSwitchDefault>Sorry I don't know what DAY it is?</div>
+    
+  </div>
+</div>
+</div>
+
+<ng-template  #invalid>
+    <div> <h3> Don't show </h3> </div>
+</ng-template>

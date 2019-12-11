@@ -1,0 +1,46 @@
+<div class="jumbotron"  *ngIf="user">
+  <table class="table table-hover table-striped">
+    <tbody>
+    <tr>
+        <th>USER ID</th>
+        <td>  {{user.id}}</td>
+    </tr>
+    <tr>    
+        <th>NAME</th>
+        <td>  {{user.name}}</td>
+      </tr>
+      <tr>    
+        <th>USERNAME</th>
+        <td>  {{user.username}}</td>
+      </tr>
+      
+      
+      <tr>    
+              <th>EMAIL</th>
+              <td>  {{user.email}}</td>
+            </tr>
+            <tr>    
+                 
+        <th>CITY</th>
+        <td>  {{user.address.city}}</td>
+    </tr>
+    <tr>    
+      <th>COMPANY</th>
+      <td>  {{user.company.name}}</td>
+    </tr>
+
+    <tr>    
+      <th>WEBSITE</th>
+      <td>  {{user.website}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+<div class="container">
+<router-outlet></router-outlet>
+</div>

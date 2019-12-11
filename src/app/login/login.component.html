@@ -1,0 +1,58 @@
+
+<div class="jumbotron">
+    <h2>Login Form</h2>
+    <form  [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm.value)" >  
+      <div class="form-group">
+
+        <label for="email">Email:</label>
+        <input type="email"  [formControl]="lf.controls['email']"    class="form-control" id="email" placeholder="Enter email" name="email">
+      
+        <span *ngIf="lf.controls['email'].dirty">
+            <div [hidden]="!lf.controls['email'].hasError('required')">
+                   Email  is required
+            </div>
+
+         <div [hidden]="!lf.controls['email'].hasError('email')">
+                Invalid Email
+         </div>
+
+          </span>            
+
+      
+      </div>
+
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+       <input type="password" [formControl]="lf.controls['password']" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+  
+       
+        <span *ngIf="lf.controls['password'].dirty">
+            <div [hidden]="!lf.controls['password'].hasError('required')">
+                   Password is required
+            </div>
+
+            <div [hidden]="!lf.controls['password'].hasError('minlength')">
+                Password should be minimum of 8 chars
+            </div>
+
+           <div [hidden]="!lf.controls['password'].hasError('maxlength')">
+                Password should be maximum of 10 chars
+            </div>
+            
+
+          </span>            
+
+      </div>
+      <button type="submit"  [disabled]="lf.invalid"  class="btn btn-primary">Login</button>
+    </form>
+    <div>
+        Is Form Valid :{{lf.valid}}  <br/><br/>
+        Is Form InValid :{{lf.invalid}}  <br/><br/>
+      
+
+    </div>
+
+
+
+  </div>
+  

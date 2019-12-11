@@ -1,0 +1,65 @@
+<div class="container">
+    <h2>{{title}}</h2>
+
+  <div class="row">
+
+
+  <div>
+    <div class="container">
+        <div class="text-center">
+            <h1>Angular 8 - Pagination Example with logic like Google</h1>
+
+            <!-- pager -->
+            <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(1)">First</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+                </li>
+                <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                    <a (click)="setPage(page)">{{page}}</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.currentPage + 1)">Next</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.totalPages)">Last</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+  <table class="table table-hover table-striped">
+<thead>
+<tr>
+    <th>USER ID</th>
+    <th>POST ID</th>
+    <th>TITLE</th>
+    <th>BODY</th>
+    <th> VIEW COMMENTS  </th>
+        
+</tr>
+</thead>
+<tbody>
+<tr  *ngFor="let p of pagedItems">
+    <td>{{p.userId}}</td>
+    <td>{{p.id}}</td>
+    <td>{{p.title}}</td>
+    <td>{{p.body}}</td>
+   <td><a  [routerLink]="['/casestudy/comments']"   [queryParams]="{'postId':p.id}"><input type="button" class="btn btn-info"  value="VIEW COMMENTS" >  </a></td>
+      
+    
+</tr>
+</tbody>
+  </table>
+   
+
+  </div>
+
+
+
+
+</div>

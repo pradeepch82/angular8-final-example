@@ -1,0 +1,16 @@
+<div class="jumbotron"    [ngStyle]="{'background-color':'cyan'}" >
+<h2>Country Component </h2>
+
+<h3>
+  
+Country Name  : <input [(ngModel)]="name"/>
+<br/><br/>
+State  Name  :{{stateName}}
+<br/><br/>
+City Name  :{{cityName}}
+  
+
+</h3>
+<app-state  [countryName]="name"    (cityChanged)="cityName=$event"   (stateChanged)="stateName=$event" ></app-state>
+    
+</div>

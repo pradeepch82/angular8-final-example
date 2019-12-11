@@ -1,0 +1,55 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"> {{title}}</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a [routerLink]="['/home']" >Home</a></li>
+      <li><a [routerLink]="['/basics']">Basics</a></li>
+      <li><a [routerLink]="['/technologies']">Technologies</a></li>
+      <li><a [routerLink]="['/pipes']">Angular Pipes</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Case Study
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li class="dropdown-submenu">
+            <a class="test" tabindex="-1" href="#">Users<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a [routerLink]="['/casestudy/users/list']">List</a></li>
+              <li><a [routerLink]="['/casestudy/users/table']">Table</a></li>
+              </ul>
+          </li>  
+
+         <li><a [routerLink]="['/casestudy/posts']">Posts</a></li>
+          <li><a [routerLink]="['/casestudy/comments']">Comments</a></li>
+          <li><a [routerLink]="['/casestudy/todos']">Todos</a></li>
+          <li><a [routerLink]="['/casestudy/albums']">Albums</a></li>
+          <li><a [routerLink]="['/casestudy/photos']">Photos</a></li>
+     
+        </ul>
+
+      </li> 
+
+
+
+      <li><a [routerLink]="['/spring-boot']">Spring Boot</a></li>
+      <li><a [routerLink]="['/nested-component']">Nested Component</a></li>
+      <li><a [routerLink]="['/custom-directives']">Custom Directives</a></li>
+      <li><a [routerLink]="['/form-validation']">Form Validation</a></li>
+      <li><a [routerLink]="['/view-child']">View Child</a></li>
+      <li><a [routerLink]="['/library']">Library Module</a></li>
+      <li><a [routerLink]="['/address']">Address Module</a></li>
+               
+            
+      
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a  [routerLink]="['/register']" ><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a [routerLink]="['/login']"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container">
+<router-outlet></router-outlet>
+</div>

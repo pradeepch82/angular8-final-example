@@ -1,0 +1,32 @@
+<div>
+
+<div class="jumbotron"   [fgColor]="'brown'" >
+<app-counter></app-counter>
+
+<input type="button" (click)="increase()"  class="btn btn-primary"  value="Increase Count"/>
+<input type="button" (click)="decrease()"  class="btn btn-info"  value="Decrease Count"/>
+
+</div>
+
+<div class="jumbotron"  >
+        <input type="button" (click)="changeColor()"  class="btn btn-success"  value="Change Color"/>
+</div>
+    
+
+
+
+<div class="jumbotron"  >
+
+  <div>
+    Name  <input    #name  value="Pradeep">  <br/><br/> 
+    City <input     #city  value="Pune"> 
+    
+  </div>
+<br/><br/>
+
+  <input type="button" (click)="changeColor()"  class="btn btn-primary"  value="Change Color"/>
+</div>
+
+
+
+</div>

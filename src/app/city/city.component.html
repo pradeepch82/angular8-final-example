@@ -1,0 +1,15 @@
+<div class="jumbotron"    [ngStyle]="{'background-color':'lightgrey'}" >
+  <h2>City Component </h2>
+  
+  <h3>
+    
+  City Name  : <input [(ngModel)]="name"     (keyup)="sendCityToState()" />
+  <br/><br/>
+State Name  :{{stateName}}
+<br/><br/>
+Country Name  :{{countryName}}
+ 
+  
+  </h3>
+      
+  </div>

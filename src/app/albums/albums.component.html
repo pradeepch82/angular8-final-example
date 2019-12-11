@@ -1,0 +1,24 @@
+<div>
+  <table class="table table-hover table-striped">
+  <caption>
+          <h2>{{title}}</h2>
+  </caption>
+       <thead>
+  <tr>
+          <th>USER ID</th>
+          <th>ALBUM ID</th>
+          <th>TITLE</th>
+          <th>VIEW PHOTOS</th>
+          
+  </tr>
+  </thead>    
+  <tbody>
+  <tr *ngFor="let a of albums">
+          <td>{{a.userId}}</td>
+          <td>{{a.id}}</td>
+          <td>{{a.title}}</td>
+          <td><a  [routerLink]="['/casestudy/photos']" [queryParams]="{'albumId':a.id}" > <input type="button" value="VIEW TODOS" class="btn btn-info" ></a></td>
+    </tr>
+  </tbody>
+  </table>
+  </div>

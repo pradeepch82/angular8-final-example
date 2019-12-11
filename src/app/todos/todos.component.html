@@ -1,0 +1,24 @@
+<div>
+  <table class="table table-hover table-striped">
+  <caption>
+          <h2>{{title}}</h2>
+  </caption>
+       <thead>
+  <tr>
+          <th>USER ID</th>
+          <th>TODO ID</th>
+          <th>TITLE</th>
+          <th>BODY</th>
+          
+  </tr>
+  </thead>    
+  <tbody>
+  <tr *ngFor="let t of todos">
+          <td>{{t.userId}}</td>
+          <td>{{t.id}}</td>
+          <td>{{t.title}}</td>
+          <td>{{t.completed}}</td>
+    </tr>
+  </tbody>
+  </table>
+  </div>
